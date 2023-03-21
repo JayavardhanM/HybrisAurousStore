@@ -1,0 +1,274 @@
+$productCatalog=aurousProductCatalog
+$storeName=aurous
+ 
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:my.aurous.initialdata.setup.InitialDataSystemSetup&/aurousinitialdata/import/sampledata/productCatalogs/$productCatalog/images
+ 
+INSERT_UPDATE MediaFolder;qualifier[unique=true];path[unique=true]
+;images;images
+ 
+# Create Media
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpg'];$catalogVersion;folder(qualifier)
+;1200Wx1200H;/1200Wx1200H/shoes/WindstormOliveGreen_1.jpg;$siteResource/1200Wx1200H/shoes/WindstormOliveGreen_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/WindstormOliveGreen_2.jpg;$siteResource/1200Wx1200H/shoes/WindstormOliveGreen_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/WindstormOliveGreen_3.jpg;$siteResource/1200Wx1200H/shoes/WindstormOliveGreen_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/WindstormBlue_1.jpg;$siteResource/1200Wx1200H/shoes/WindstormBlue_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/WindstormBlue_2.jpg;$siteResource/1200Wx1200H/shoes/WindstormBlue_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/WindstormBlue_3.jpg;$siteResource/1200Wx1200H/shoes/WindstormBlue_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/Falcon_1.jpg;$siteResource/1200Wx1200H/shoes/Falcon_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/Falcon_2.jpg;$siteResource/1200Wx1200H/shoes/Falcon_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/Falcon_3.jpg;$siteResource/1200Wx1200H/shoes/Falcon_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/LeoLaceupSneakers_1.jpg;$siteResource/1200Wx1200H/shoes/LeoLaceupSneakers_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/LeoLaceupSneakers_2.jpg;$siteResource/1200Wx1200H/shoes/LeoLaceupSneakers_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shoes/LeoLaceupSneakers_3.jpg;$siteResource/1200Wx1200H/shoes/LeoLaceupSneakers_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/ArbreEauDePerfume_1.jpg;$siteResource/1200Wx1200H/fragrances/ArbreEauDePerfume_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/ArbreEauDePerfume_2.jpg;$siteResource/1200Wx1200H/fragrances/ArbreEauDePerfume_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/ArbreEauDePerfume_3.jpg;$siteResource/1200Wx1200H/fragrances/ArbreEauDePerfume_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/ShadowEauDePerfume_1.jpg;$siteResource/1200Wx1200H/fragrances/ShadowEauDePerfume_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/ShadowEauDePerfume_2.jpg;$siteResource/1200Wx1200H/fragrances/ShadowEauDePerfume_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/ShadowEauDePerfume_3.jpg;$siteResource/1200Wx1200H/fragrances/ShadowEauDePerfume_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_1.jpg;$siteResource/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_2.jpg;$siteResource/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_3.jpg;$siteResource/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/AbyadEauDePerfume_1.jpg;$siteResource/1200Wx1200H/fragrances/AbyadEauDePerfume_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/AbyadEauDePerfume_2.jpg;$siteResource/1200Wx1200H/fragrances/AbyadEauDePerfume_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/fragrances/AbyadEauDePerfume_3.jpg;$siteResource/1200Wx1200H/fragrances/AbyadEauDePerfume_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shades/AlMg_1.jpg;$siteResource/1200Wx1200H/shades/AlMg_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shades/GradientBlue_1.jpg;$siteResource/1200Wx1200H/shades/GradientBlue_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shades/FullWoodenBrown_1.jpg;$siteResource/1200Wx1200H/shades/FullWoodenBrown_1.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shades/FullWoodenBrown_2.jpg;$siteResource/1200Wx1200H/shades/FullWoodenBrown_2.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shades/FullWoodenBrown_3.jpg;$siteResource/1200Wx1200H/shades/FullWoodenBrown_3.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/shades/Photocromic_1.jpg;$siteResource/1200Wx1200H/shades/Photocromic_1.jpg;;;images
+
+
+;515Wx515H;/515Wx515H/shoes/WindstormOliveGreen_1.jpg;$siteResource/515Wx515H/shoes/WindstormOliveGreen_1.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/WindstormOliveGreen_2.jpg;$siteResource/515Wx515H/shoes/WindstormOliveGreen_2.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/WindstormOliveGreen_3.jpg;$siteResource/515Wx515H/shoes/WindstormOliveGreen_3.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/WindstormBlue_1.jpg;$siteResource/515Wx515H/shoes/WindstormBlue_1.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/WindstormBlue_2.jpg;$siteResource/515Wx515H/shoes/WindstormBlue_2.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/WindstormBlue_3.jpg;$siteResource/515Wx515H/shoes/WindstormBlue_3.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/Falcon_1.jpg;$siteResource/515Wx515H/shoes/Falcon_1.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/Falcon_2.jpg;$siteResource/515Wx515H/shoes/Falcon_2.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/Falcon_3.jpg;$siteResource/515Wx515H/shoes/Falcon_3.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/LeoLaceupSneakers_1.jpg;$siteResource/515Wx515H/shoes/LeoLaceupSneakers_1.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/LeoLaceupSneakers_2.jpg;$siteResource/515Wx515H/shoes/LeoLaceupSneakers_2.jpg;;;images
+;515Wx515H;/515Wx515H/shoes/LeoLaceupSneakers_3.jpg;$siteResource/515Wx515H/shoes/LeoLaceupSneakers_3.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/ArbreEauDePerfume_1.jpg;$siteResource/515Wx515H/fragrances/ArbreEauDePerfume_1.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/ArbreEauDePerfume_2.jpg;$siteResource/515Wx515H/fragrances/ArbreEauDePerfume_2.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/ArbreEauDePerfume_3.jpg;$siteResource/515Wx515H/fragrances/ArbreEauDePerfume_3.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/ShadowEauDePerfume_1.jpg;$siteResource/515Wx515H/fragrances/ShadowEauDePerfume_1.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/ShadowEauDePerfume_2.jpg;$siteResource/515Wx515H/fragrances/ShadowEauDePerfume_2.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/ShadowEauDePerfume_3.jpg;$siteResource/515Wx515H/fragrances/ShadowEauDePerfume_3.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/AngelWomen'sEauDePerfume_1.jpg;$siteResource/515Wx515H/fragrances/AngelWomen'sEauDePerfume_1.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/AngelWomen'sEauDePerfume_2.jpg;$siteResource/515Wx515H/fragrances/AngelWomen'sEauDePerfume_2.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/AngelWomen'sEauDePerfume_3.jpg;$siteResource/515Wx515H/fragrances/AngelWomen'sEauDePerfume_3.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/AbyadEauDePerfume_1.jpg;$siteResource/515Wx515H/fragrances/AbyadEauDePerfume_1.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/AbyadEauDePerfume_2.jpg;$siteResource/515Wx515H/fragrances/AbyadEauDePerfume_2.jpg;;;images
+;515Wx515H;/515Wx515H/fragrances/AbyadEauDePerfume_3.jpg;$siteResource/515Wx515H/fragrances/AbyadEauDePerfume_3.jpg;;;images
+;515Wx515H;/515Wx515H/shades/AlMg_1.jpg;$siteResource/515Wx515H/shades/AlMg_1.jpg;;;images
+;515Wx515H;/515Wx515H/shades/GradientBlue_1.jpg;$siteResource/515Wx515H/shades/GradientBlue_1.jpg;;;images
+;515Wx515H;/515Wx515H/shades/FullWoodenBrown_1.jpg;$siteResource/515Wx515H/shades/FullWoodenBrown_1.jpg;;;images
+;515Wx515H;/515Wx515H/shades/FullWoodenBrown_2.jpg;$siteResource/515Wx515H/shades/FullWoodenBrown_2.jpg;;;images
+;515Wx515H;/515Wx515H/shades/FullWoodenBrown_3.jpg;$siteResource/515Wx515H/shades/FullWoodenBrown_3.jpg;;;images
+;515Wx515H;/515Wx515H/shades/Photocromic_1.jpg;$siteResource/515Wx515H/shades/Photocromic_1.jpg;;;images
+
+
+;300Wx300H;/300Wx300H/shoes/WindstormOliveGreen_1.jpg;$siteResource/300Wx300H/shoes/WindstormOliveGreen_1.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/WindstormOliveGreen_2.jpg;$siteResource/300Wx300H/shoes/WindstormOliveGreen_2.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/WindstormOliveGreen_3.jpg;$siteResource/300Wx300H/shoes/WindstormOliveGreen_3.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/WindstormBlue_1.jpg;$siteResource/300Wx300H/shoes/WindstormBlue_1.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/WindstormBlue_2.jpg;$siteResource/300Wx300H/shoes/WindstormBlue_2.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/WindstormBlue_3.jpg;$siteResource/300Wx300H/shoes/WindstormBlue_3.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/Falcon_1.jpg;$siteResource/300Wx300H/shoes/Falcon_1.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/Falcon_2.jpg;$siteResource/300Wx300H/shoes/Falcon_2.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/Falcon_3.jpg;$siteResource/300Wx300H/shoes/Falcon_3.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/LeoLaceupSneakers_1.jpg;$siteResource/300Wx300H/shoes/LeoLaceupSneakers_1.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/LeoLaceupSneakers_2.jpg;$siteResource/300Wx300H/shoes/LeoLaceupSneakers_2.jpg;;;images
+;300Wx300H;/300Wx300H/shoes/LeoLaceupSneakers_3.jpg;$siteResource/300Wx300H/shoes/LeoLaceupSneakers_3.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/ArbreEauDePerfume_1.jpg;$siteResource/300Wx300H/fragrances/ArbreEauDePerfume_1.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/ArbreEauDePerfume_2.jpg;$siteResource/300Wx300H/fragrances/ArbreEauDePerfume_2.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/ArbreEauDePerfume_3.jpg;$siteResource/300Wx300H/fragrances/ArbreEauDePerfume_3.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/ShadowEauDePerfume_1.jpg;$siteResource/300Wx300H/fragrances/ShadowEauDePerfume_1.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/ShadowEauDePerfume_2.jpg;$siteResource/300Wx300H/fragrances/ShadowEauDePerfume_2.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/ShadowEauDePerfume_3.jpg;$siteResource/300Wx300H/fragrances/ShadowEauDePerfume_3.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/AngelWomen'sEauDePerfume_1.jpg;$siteResource/300Wx300H/fragrances/AngelWomen'sEauDePerfume_1.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/AngelWomen'sEauDePerfume_2.jpg;$siteResource/300Wx300H/fragrances/AngelWomen'sEauDePerfume_2.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/AngelWomen'sEauDePerfume_3.jpg;$siteResource/300Wx300H/fragrances/AngelWomen'sEauDePerfume_3.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/AbyadEauDePerfume_1.jpg;$siteResource/300Wx300H/fragrances/AbyadEauDePerfume_1.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/AbyadEauDePerfume_2.jpg;$siteResource/300Wx300H/fragrances/AbyadEauDePerfume_2.jpg;;;images
+;300Wx300H;/300Wx300H/fragrances/AbyadEauDePerfume_3.jpg;$siteResource/300Wx300H/fragrances/AbyadEauDePerfume_3.jpg;;;images
+;300Wx300H;/300Wx300H/shades/AlMg_1.jpg;$siteResource/300Wx300H/shades/AlMg_1.jpg;;;images
+;300Wx300H;/300Wx300H/shades/GradientBlue_1.jpg;$siteResource/300Wx300H/shades/GradientBlue_1.jpg;;;images
+;300Wx300H;/300Wx300H/shades/FullWoodenBrown_1.jpg;$siteResource/300Wx300H/shades/FullWoodenBrown_1.jpg;;;images
+;300Wx300H;/300Wx300H/shades/FullWoodenBrown_2.jpg;$siteResource/300Wx300H/shades/FullWoodenBrown_2.jpg;;;images
+;300Wx300H;/300Wx300H/shades/FullWoodenBrown_3.jpg;$siteResource/300Wx300H/shades/FullWoodenBrown_3.jpg;;;images
+;300Wx300H;/300Wx300H/shades/Photocromic_1.jpg;$siteResource/300Wx300H/shades/Photocromic_1.jpg;;;images
+
+
+;96Wx96H;/96Wx96H/shoes/WindstormOliveGreen_1.jpg;$siteResource/96Wx96H/shoes/WindstormOliveGreen_1.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/WindstormOliveGreen_2.jpg;$siteResource/96Wx96H/shoes/WindstormOliveGreen_2.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/WindstormOliveGreen_3.jpg;$siteResource/96Wx96H/shoes/WindstormOliveGreen_3.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/WindstormBlue_1.jpg;$siteResource/96Wx96H/shoes/WindstormBlue_1.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/WindstormBlue_2.jpg;$siteResource/96Wx96H/shoes/WindstormBlue_2.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/WindstormBlue_3.jpg;$siteResource/96Wx96H/shoes/WindstormBlue_3.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/Falcon_1.jpg;$siteResource/96Wx96H/shoes/Falcon_1.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/Falcon_2.jpg;$siteResource/96Wx96H/shoes/Falcon_2.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/Falcon_3.jpg;$siteResource/96Wx96H/shoes/Falcon_3.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/LeoLaceupSneakers_1.jpg;$siteResource/96Wx96H/shoes/LeoLaceupSneakers_1.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/LeoLaceupSneakers_2.jpg;$siteResource/96Wx96H/shoes/LeoLaceupSneakers_2.jpg;;;images
+;96Wx96H;/96Wx96H/shoes/LeoLaceupSneakers_3.jpg;$siteResource/96Wx96H/shoes/LeoLaceupSneakers_3.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/ArbreEauDePerfume_1.jpg;$siteResource/96Wx96H/fragrances/ArbreEauDePerfume_1.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/ArbreEauDePerfume_2.jpg;$siteResource/96Wx96H/fragrances/ArbreEauDePerfume_2.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/ArbreEauDePerfume_3.jpg;$siteResource/96Wx96H/fragrances/ArbreEauDePerfume_3.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/ShadowEauDePerfume_1.jpg;$siteResource/96Wx96H/fragrances/ShadowEauDePerfume_1.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/ShadowEauDePerfume_2.jpg;$siteResource/96Wx96H/fragrances/ShadowEauDePerfume_2.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/ShadowEauDePerfume_3.jpg;$siteResource/96Wx96H/fragrances/ShadowEauDePerfume_3.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/AngelWomen'sEauDePerfume_1.jpg;$siteResource/96Wx96H/fragrances/AngelWomen'sEauDePerfume_1.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/AngelWomen'sEauDePerfume_2.jpg;$siteResource/96Wx96H/fragrances/AngelWomen'sEauDePerfume_2.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/AngelWomen'sEauDePerfume_3.jpg;$siteResource/96Wx96H/fragrances/AngelWomen'sEauDePerfume_3.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/AbyadEauDePerfume_1.jpg;$siteResource/96Wx96H/fragrances/AbyadEauDePerfume_1.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/AbyadEauDePerfume_2.jpg;$siteResource/96Wx96H/fragrances/AbyadEauDePerfume_2.jpg;;;images
+;96Wx96H;/96Wx96H/fragrances/AbyadEauDePerfume_3.jpg;$siteResource/96Wx96H/fragrances/AbyadEauDePerfume_3.jpg;;;images
+;96Wx96H;/96Wx96H/shades/AlMg_1.jpg;$siteResource/96Wx96H/shades/AlMg_1.jpg;;;images
+;96Wx96H;/96Wx96H/shades/GradientBlue_1.jpg;$siteResource/96Wx96H/shades/GradientBlue_1.jpg;;;images
+;96Wx96H;/96Wx96H/shades/FullWoodenBrown_1.jpg;$siteResource/96Wx96H/shades/FullWoodenBrown_1.jpg;;;images
+;96Wx96H;/96Wx96H/shades/FullWoodenBrown_2.jpg;$siteResource/96Wx96H/shades/FullWoodenBrown_2.jpg;;;images
+;96Wx96H;/96Wx96H/shades/FullWoodenBrown_3.jpg;$siteResource/96Wx96H/shades/FullWoodenBrown_3.jpg;;;images
+;96Wx96H;/96Wx96H/shades/Photocromic_1.jpg;$siteResource/96Wx96H/shades/Photocromic_1.jpg;;;images
+
+
+;65Wx65H;/65Wx65H/shoes/WindstormOliveGreen_1.jpg;$siteResource/65Wx65H/shoes/WindstormOliveGreen_1.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/WindstormOliveGreen_2.jpg;$siteResource/65Wx65H/shoes/WindstormOliveGreen_2.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/WindstormOliveGreen_3.jpg;$siteResource/65Wx65H/shoes/WindstormOliveGreen_3.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/WindstormBlue_1.jpg;$siteResource/65Wx65H/shoes/WindstormBlue_1.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/WindstormBlue_2.jpg;$siteResource/65Wx65H/shoes/WindstormBlue_2.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/WindstormBlue_3.jpg;$siteResource/65Wx65H/shoes/WindstormBlue_3.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/Falcon_1.jpg;$siteResource/65Wx65H/shoes/Falcon_1.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/Falcon_2.jpg;$siteResource/65Wx65H/shoes/Falcon_2.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/Falcon_3.jpg;$siteResource/65Wx65H/shoes/Falcon_3.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/LeoLaceupSneakers_1.jpg;$siteResource/65Wx65H/shoes/LeoLaceupSneakers_1.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/LeoLaceupSneakers_2.jpg;$siteResource/65Wx65H/shoes/LeoLaceupSneakers_2.jpg;;;images
+;65Wx65H;/65Wx65H/shoes/LeoLaceupSneakers_3.jpg;$siteResource/65Wx65H/shoes/LeoLaceupSneakers_3.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/ArbreEauDePerfume_1.jpg;$siteResource/65Wx65H/fragrances/ArbreEauDePerfume_1.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/ArbreEauDePerfume_2.jpg;$siteResource/65Wx65H/fragrances/ArbreEauDePerfume_2.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/ArbreEauDePerfume_3.jpg;$siteResource/65Wx65H/fragrances/ArbreEauDePerfume_3.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/ShadowEauDePerfume_1.jpg;$siteResource/65Wx65H/fragrances/ShadowEauDePerfume_1.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/ShadowEauDePerfume_2.jpg;$siteResource/65Wx65H/fragrances/ShadowEauDePerfume_2.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/ShadowEauDePerfume_3.jpg;$siteResource/65Wx65H/fragrances/ShadowEauDePerfume_3.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/AngelWomen'sEauDePerfume_1.jpg;$siteResource/65Wx65H/fragrances/AngelWomen'sEauDePerfume_1.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/AngelWomen'sEauDePerfume_2.jpg;$siteResource/65Wx65H/fragrances/AngelWomen'sEauDePerfume_2.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/AngelWomen'sEauDePerfume_3.jpg;$siteResource/65Wx65H/fragrances/AngelWomen'sEauDePerfume_3.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/AbyadEauDePerfume_1.jpg;$siteResource/65Wx65H/fragrances/AbyadEauDePerfume_1.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/AbyadEauDePerfume_2.jpg;$siteResource/65Wx65H/fragrances/AbyadEauDePerfume_2.jpg;;;images
+;65Wx65H;/65Wx65H/fragrances/AbyadEauDePerfume_3.jpg;$siteResource/65Wx65H/fragrances/AbyadEauDePerfume_3.jpg;;;images
+;65Wx65H;/65Wx65H/shades/AlMg_1.jpg;$siteResource/65Wx65H/shades/AlMg_1.jpg;;;images
+;65Wx65H;/65Wx65H/shades/GradientBlue_1.jpg;$siteResource/65Wx65H/shades/GradientBlue_1.jpg;;;images
+;65Wx65H;/65Wx65H/shades/FullWoodenBrown_1.jpg;$siteResource/65Wx65H/shades/FullWoodenBrown_1.jpg;;;images
+;65Wx65H;/65Wx65H/shades/FullWoodenBrown_2.jpg;$siteResource/65Wx65H/shades/FullWoodenBrown_2.jpg;;;images
+;65Wx65H;/65Wx65H/shades/FullWoodenBrown_3.jpg;$siteResource/65Wx65H/shades/FullWoodenBrown_3.jpg;;;images
+;65Wx65H;/65Wx65H/shades/Photocromic_1.jpg;$siteResource/65Wx65H/shades/Photocromic_1.jpg;;;images
+
+
+;30Wx30H;/30Wx30H/shoes/WindstormOliveGreen_1.jpg;$siteResource/30Wx30H/shoes/WindstormOliveGreen_1.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/WindstormOliveGreen_2.jpg;$siteResource/30Wx30H/shoes/WindstormOliveGreen_2.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/WindstormOliveGreen_3.jpg;$siteResource/30Wx30H/shoes/WindstormOliveGreen_3.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/WindstormBlue_1.jpg;$siteResource/30Wx30H/shoes/WindstormBlue_1.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/WindstormBlue_2.jpg;$siteResource/30Wx30H/shoes/WindstormBlue_2.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/WindstormBlue_3.jpg;$siteResource/30Wx30H/shoes/WindstormBlue_3.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/Falcon_1.jpg;$siteResource/30Wx30H/shoes/Falcon_1.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/Falcon_2.jpg;$siteResource/30Wx30H/shoes/Falcon_2.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/Falcon_3.jpg;$siteResource/30Wx30H/shoes/Falcon_3.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/LeoLaceupSneakers_1.jpg;$siteResource/30Wx30H/shoes/LeoLaceupSneakers_1.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/LeoLaceupSneakers_2.jpg;$siteResource/30Wx30H/shoes/LeoLaceupSneakers_2.jpg;;;images
+;30Wx30H;/30Wx30H/shoes/LeoLaceupSneakers_3.jpg;$siteResource/30Wx30H/shoes/LeoLaceupSneakers_3.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/ArbreEauDePerfume_1.jpg;$siteResource/30Wx30H/fragrances/ArbreEauDePerfume_1.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/ArbreEauDePerfume_2.jpg;$siteResource/30Wx30H/fragrances/ArbreEauDePerfume_2.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/ArbreEauDePerfume_3.jpg;$siteResource/30Wx30H/fragrances/ArbreEauDePerfume_3.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/ShadowEauDePerfume_1.jpg;$siteResource/30Wx30H/fragrances/ShadowEauDePerfume_1.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/ShadowEauDePerfume_2.jpg;$siteResource/30Wx30H/fragrances/ShadowEauDePerfume_2.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/ShadowEauDePerfume_3.jpg;$siteResource/30Wx30H/fragrances/ShadowEauDePerfume_3.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/AngelWomen'sEauDePerfume_1.jpg;$siteResource/30Wx30H/fragrances/AngelWomen'sEauDePerfume_1.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/AngelWomen'sEauDePerfume_2.jpg;$siteResource/30Wx30H/fragrances/AngelWomen'sEauDePerfume_2.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/AngelWomen'sEauDePerfume_3.jpg;$siteResource/30Wx30H/fragrances/AngelWomen'sEauDePerfume_3.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/AbyadEauDePerfume_1.jpg;$siteResource/30Wx30H/fragrances/AbyadEauDePerfume_1.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/AbyadEauDePerfume_2.jpg;$siteResource/30Wx30H/fragrances/AbyadEauDePerfume_2.jpg;;;images
+;30Wx30H;/30Wx30H/fragrances/AbyadEauDePerfume_3.jpg;$siteResource/30Wx30H/fragrances/AbyadEauDePerfume_3.jpg;;;images
+;30Wx30H;/30Wx30H/shades/AlMg_1.jpg;$siteResource/30Wx30H/shades/AlMg_1.jpg;;;images
+;30Wx30H;/30Wx30H/shades/GradientBlue_1.jpg;$siteResource/30Wx30H/shades/GradientBlue_1.jpg;;;images
+;30Wx30H;/30Wx30H/shades/FullWoodenBrown_1.jpg;$siteResource/30Wx30H/shades/FullWoodenBrown_1.jpg;;;images
+;30Wx30H;/30Wx30H/shades/FullWoodenBrown_2.jpg;$siteResource/30Wx30H/shades/FullWoodenBrown_2.jpg;;;images
+;30Wx30H;/30Wx30H/shades/FullWoodenBrown_3.jpg;$siteResource/30Wx30H/shades/FullWoodenBrown_3.jpg;;;images
+;30Wx30H;/30Wx30H/shades/Photocromic_1.jpg;$siteResource/30Wx30H/shades/Photocromic_1.jpg;;;images
+
+
+# Create Media Containers
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+;101_1.jpg;/1200Wx1200H/shoes/WindstormOliveGreen_1.jpg,/515Wx515H/shoes/WindstormOliveGreen_1.jpg,/300Wx300H/shoes/WindstormOliveGreen_1.jpg,/96Wx96H/shoes/WindstormOliveGreen_1.jpg,/65Wx65H/shoes/WindstormOliveGreen_1.jpg,/30Wx30H/shoes/WindstormOliveGreen_1.jpg
+;101_2.jpg;/1200Wx1200H/shoes/WindstormOliveGreen_2.jpg,/515Wx515H/shoes/WindstormOliveGreen_2.jpg,/300Wx300H/shoes/WindstormOliveGreen_2.jpg,/96Wx96H/shoes/WindstormOliveGreen_2.jpg,/65Wx65H/shoes/WindstormOliveGreen_2.jpg,/30Wx30H/shoes/WindstormOliveGreen_2.jpg
+;101_3.jpg;/1200Wx1200H/shoes/WindstormOliveGreen_3.jpg,/515Wx515H/shoes/WindstormOliveGreen_3.jpg,/300Wx300H/shoes/WindstormOliveGreen_3.jpg,/96Wx96H/shoes/WindstormOliveGreen_3.jpg,/65Wx65H/shoes/WindstormOliveGreen_3.jpg,/30Wx30H/shoes/WindstormOliveGreen_3.jpg
+
+;102_1.jpg;/1200Wx1200H/shoes/WindstormBlue_1.jpg,/515Wx515H/shoes/WindstormBlue_1.jpg,/300Wx300H/shoes/WindstormBlue_1.jpg,/96Wx96H/shoes/WindstormBlue_1.jpg,/65Wx65H/shoes/WindstormBlue_1.jpg,/30Wx30H/shoes/WindstormBlue_1.jpg
+;102_2.jpg;/1200Wx1200H/shoes/WindstormBlue_2.jpg,/515Wx515H/shoes/WindstormBlue_2.jpg,/300Wx300H/shoes/WindstormBlue_2.jpg,/96Wx96H/shoes/WindstormBlue_2.jpg,/65Wx65H/shoes/WindstormBlue_2.jpg,/30Wx30H/shoes/WindstormBlue_2.jpg
+;102_3.jpg;/1200Wx1200H/shoes/WindstormBlue_3.jpg,/515Wx515H/shoes/WindstormBlue_3.jpg,/300Wx300H/shoes/WindstormBlue_3.jpg,/96Wx96H/shoes/WindstormBlue_3.jpg,/65Wx65H/shoes/WindstormBlue_3.jpg,/30Wx30H/shoes/WindstormBlue_3.jpg
+
+;103_1.jpg;/1200Wx1200H/shoes/Falcon_1.jpg,/515Wx515H/shoes/Falcon_1.jpg,/300Wx300H/shoes/Falcon_1.jpg,/96Wx96H/shoes/Falcon_1.jpg,/65Wx65H/shoes/Falcon_1.jpg,/30Wx30H/shoes/Falcon_1.jpg
+;103_2.jpg;/1200Wx1200H/shoes/Falcon_2.jpg,/515Wx515H/shoes/Falcon_2.jpg,/300Wx300H/shoes/Falcon_2.jpg,/96Wx96H/shoes/Falcon_2.jpg,/65Wx65H/shoes/Falcon_2.jpg,/30Wx30H/shoes/Falcon_2.jpg
+;103_3.jpg;/1200Wx1200H/shoes/Falcon_3.jpg,/515Wx515H/shoes/Falcon_3.jpg,/300Wx300H/shoes/Falcon_3.jpg,/96Wx96H/shoes/Falcon_3.jpg,/65Wx65H/shoes/Falcon_3.jpg,/30Wx30H/shoes/Falcon_3.jpg
+
+;104_1.jpg;/1200Wx1200H/shoes/LeoLaceupSneakers_1.jpg,/515Wx515H/shoes/LeoLaceupSneakers_1.jpg,/300Wx300H/shoes/LeoLaceupSneakers_1.jpg,/96Wx96H/shoes/LeoLaceupSneakers_1.jpg,/65Wx65H/shoes/LeoLaceupSneakers_1.jpg,/30Wx30H/shoes/LeoLaceupSneakers_1.jpg
+;104_2.jpg;/1200Wx1200H/shoes/LeoLaceupSneakers_2.jpg,/515Wx515H/shoes/LeoLaceupSneakers_2.jpg,/300Wx300H/shoes/LeoLaceupSneakers_2.jpg,/96Wx96H/shoes/LeoLaceupSneakers_2.jpg,/65Wx65H/shoes/LeoLaceupSneakers_2.jpg,/30Wx30H/shoes/LeoLaceupSneakers_2.jpg
+;104_3.jpg;/1200Wx1200H/shoes/LeoLaceupSneakers_3.jpg,/515Wx515H/shoes/LeoLaceupSneakers_3.jpg,/300Wx300H/shoes/LeoLaceupSneakers_3.jpg,/96Wx96H/shoes/LeoLaceupSneakers_3.jpg,/65Wx65H/shoes/LeoLaceupSneakers_3.jpg,/30Wx30H/shoes/LeoLaceupSneakers_3.jpg
+
+;201_1.jpg;/1200Wx1200H/fragrances/ArbreEauDePerfume_1.jpg,/515Wx515H/fragrances/ArbreEauDePerfume_1.jpg,/300Wx300H/fragrances/ArbreEauDePerfume_1.jpg,/96Wx96H/fragrances/ArbreEauDePerfume_1.jpg,/65Wx65H/fragrances/ArbreEauDePerfume_1.jpg,/30Wx30H/fragrances/ArbreEauDePerfume_1.jpg
+;201_2.jpg;/1200Wx1200H/fragrances/ArbreEauDePerfume_2.jpg,/515Wx515H/fragrances/ArbreEauDePerfume_2.jpg,/300Wx300H/fragrances/ArbreEauDePerfume_2.jpg,/96Wx96H/fragrances/ArbreEauDePerfume_2.jpg,/65Wx65H/fragrances/ArbreEauDePerfume_2.jpg,/30Wx30H/fragrances/ArbreEauDePerfume_2.jpg
+;201_3.jpg;/1200Wx1200H/fragrances/ArbreEauDePerfume_3.jpg,/515Wx515H/fragrances/ArbreEauDePerfume_3.jpg,/300Wx300H/fragrances/ArbreEauDePerfume_3.jpg,/96Wx96H/fragrances/ArbreEauDePerfume_3.jpg,/65Wx65H/fragrances/ArbreEauDePerfume_3.jpg,/30Wx30H/fragrances/ArbreEauDePerfume_3.jpg
+
+;202_1.jpg;/1200Wx1200H/fragrances/ShadowEauDePerfume_1.jpg,/515Wx515H/fragrances/ShadowEauDePerfume_1.jpg,/300Wx300H/fragrances/ShadowEauDePerfume_1.jpg,/96Wx96H/fragrances/ShadowEauDePerfume_1.jpg,/65Wx65H/fragrances/ShadowEauDePerfume_1.jpg,/30Wx30H/fragrances/ShadowEauDePerfume_1.jpg
+;202_2.jpg;/1200Wx1200H/fragrances/ShadowEauDePerfume_2.jpg,/515Wx515H/fragrances/ShadowEauDePerfume_2.jpg,/300Wx300H/fragrances/ShadowEauDePerfume_2.jpg,/96Wx96H/fragrances/ShadowEauDePerfume_2.jpg,/65Wx65H/fragrances/ShadowEauDePerfume_2.jpg,/30Wx30H/fragrances/ShadowEauDePerfume_2.jpg
+;202_3.jpg;/1200Wx1200H/fragrances/ShadowEauDePerfume_3.jpg,/515Wx515H/fragrances/ShadowEauDePerfume_3.jpg,/300Wx300H/fragrances/ShadowEauDePerfume_3.jpg,/96Wx96H/fragrances/ShadowEauDePerfume_3.jpg,/65Wx65H/fragrances/ShadowEauDePerfume_3.jpg,/30Wx30H/fragrances/ShadowEauDePerfume_3.jpg
+
+;203_1.jpg;/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_1.jpg,/515Wx515H/fragrances/AngelWomen'sEauDePerfume_1.jpg,/300Wx300H/fragrances/AngelWomen'sEauDePerfume_1.jpg,/96Wx96H/fragrances/AngelWomen'sEauDePerfume_1.jpg,/65Wx65H/fragrances/AngelWomen'sEauDePerfume_1.jpg,/30Wx30H/fragrances/AngelWomen'sEauDePerfume_1.jpg
+;203_2.jpg;/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_2.jpg,/515Wx515H/fragrances/AngelWomen'sEauDePerfume_2.jpg,/300Wx300H/fragrances/AngelWomen'sEauDePerfume_2.jpg,/96Wx96H/fragrances/AngelWomen'sEauDePerfume_2.jpg,/65Wx65H/fragrances/AngelWomen'sEauDePerfume_2.jpg,/30Wx30H/fragrances/AngelWomen'sEauDePerfume_2.jpg
+;203_3.jpg;/1200Wx1200H/fragrances/AngelWomen'sEauDePerfume_3.jpg,/515Wx515H/fragrances/AngelWomen'sEauDePerfume_3.jpg,/300Wx300H/fragrances/AngelWomen'sEauDePerfume_3.jpg,/96Wx96H/fragrances/AngelWomen'sEauDePerfume_3.jpg,/65Wx65H/fragrances/AngelWomen'sEauDePerfume_3.jpg,/30Wx30H/fragrances/AngelWomen'sEauDePerfume_3.jpg
+
+;204_1.jpg;/1200Wx1200H/fragrances/AbyadEauDePerfume_1.jpg,/515Wx515H/fragrances/AbyadEauDePerfume_1.jpg,/300Wx300H/fragrances/AbyadEauDePerfume_1.jpg,/96Wx96H/fragrances/AbyadEauDePerfume_1.jpg,/65Wx65H/fragrances/AbyadEauDePerfume_1.jpg,/30Wx30H/fragrances/AbyadEauDePerfume_1.jpg
+;204_2.jpg;/1200Wx1200H/fragrances/AbyadEauDePerfume_2.jpg,/515Wx515H/fragrances/AbyadEauDePerfume_2.jpg,/300Wx300H/fragrances/AbyadEauDePerfume_2.jpg,/96Wx96H/fragrances/AbyadEauDePerfume_2.jpg,/65Wx65H/fragrances/AbyadEauDePerfume_2.jpg,/30Wx30H/fragrances/AbyadEauDePerfume_2.jpg
+;204_3.jpg;/1200Wx1200H/fragrances/AbyadEauDePerfume_3.jpg,/515Wx515H/fragrances/AbyadEauDePerfume_3.jpg,/300Wx300H/fragrances/AbyadEauDePerfume_3.jpg,/96Wx96H/fragrances/AbyadEauDePerfume_3.jpg,/65Wx65H/fragrances/AbyadEauDePerfume_3.jpg,/30Wx30H/fragrances/AbyadEauDePerfume_3.jpg
+
+;301_1.jpg;/1200Wx1200H/shades/AlMg_1.jpg,/515Wx515H/shades/AlMg_1.jpg,/300Wx300H/shades/AlMg_1.jpg,/96Wx96H/shades/AlMg_1.jpg,/65Wx65H/shades/AlMg_1.jpg,/30Wx30H/shades/AlMg_1.jpg
+
+;302_1.jpg;/1200Wx1200H/shades/GradientBlue_1.jpg,/515Wx515H/shades/GradientBlue_1.jpg,/300Wx300H/shades/GradientBlue_1.jpg,/96Wx96H/shades/GradientBlue_1.jpg,/65Wx65H/shades/GradientBlue_1.jpg,/30Wx30H/shades/GradientBlue_1.jpg
+
+;303_1.jpg;/1200Wx1200H/shades/FullWoodenBrown_1.jpg,/515Wx515H/shades/FullWoodenBrown_1.jpg,/300Wx300H/shades/FullWoodenBrown_1.jpg,/96Wx96H/shades/FullWoodenBrown_1.jpg,/65Wx65H/shades/FullWoodenBrown_1.jpg,/30Wx30H/shades/FullWoodenBrown_1.jpg
+;303_2.jpg;/1200Wx1200H/shades/FullWoodenBrown_2.jpg,/515Wx515H/shades/FullWoodenBrown_2.jpg,/300Wx300H/shades/FullWoodenBrown_2.jpg,/96Wx96H/shades/FullWoodenBrown_2.jpg,/65Wx65H/shades/FullWoodenBrown_2.jpg,/30Wx30H/shades/FullWoodenBrown_2.jpg
+;303_3.jpg;/1200Wx1200H/shades/FullWoodenBrown_3.jpg,/515Wx515H/shades/FullWoodenBrown_3.jpg,/300Wx300H/shades/FullWoodenBrown_3.jpg,/96Wx96H/shades/FullWoodenBrown_3.jpg,/65Wx65H/shades/FullWoodenBrown_3.jpg,/30Wx30H/shades/FullWoodenBrown_3.jpg
+
+;304_1.jpg;/1200Wx1200H/shades/Photocromic_1.jpg,/515Wx515H/shades/Photocromic_1.jpg,/300Wx300H/shades/Photocromic_1.jpg,/96Wx96H/shades/Photocromic_1.jpg,/65Wx65H/shades/Photocromic_1.jpg,/30Wx30H/shades/Photocromic_1.jpg
+
+ 
+# Update Products with Media and Media Containers
+INSERT_UPDATE Product;code[unique=true];$catalogVersion;$galleryImages;$picture;$thumbnail
+ ;101;;101_1.jpg,101_2.jpg,101_3.jpg;/300Wx300H/shoes/WindstormOliveGreen_1.jpg;/96Wx96H/shoes/WindstormOliveGreen_1.jpg
+ ;102;;102_1.jpg,102_2.jpg,102_3.jpg;/300Wx300H/shoes/WindstormBlue_1.jpg;/96Wx96H/shoes/WindstormBlue_1.jpg
+ ;103;;103_1.jpg,103_2.jpg,103_3.jpg;/300Wx300H/shoes/Falcon_1.jpg;/96Wx96H/shoes/Falcon_1.jpg
+ ;104;;104_1.jpg,104_2.jpg,104_3.jpg;/300Wx300H/shoes/LeoLaceupSneakers_1.jpg;/96Wx96H/shoes/LeoLaceupSneakers_1.jpg
+ 
+ ;201;;201_1.jpg,201_2.jpg,201_3.jpg;/300Wx300H/fragrances/ArbreEauDePerfume_1.jpg;/96Wx96H/fragrances/ArbreEauDePerfume_1.jpg
+ ;202;;202_1.jpg,202_2.jpg,202_3.jpg;/300Wx300H/fragrances/ShadowEauDePerfume_1.jpg;/96Wx96H/fragrances/ShadowEauDePerfume_1.jpg
+ ;203;;203_1.jpg,203_2.jpg,203_3.jpg;/300Wx300H/fragrances/AngelWomen'sEauDePerfume_1.jpg;/96Wx96H/fragrances/AngelWomen'sEauDePerfume_1.jpg
+ ;204;;204_1.jpg,204_2.jpg,204_3.jpg;/300Wx300H/fragrances/AbyadEauDePerfume_1.jpg;/96Wx96H/fragrances/AbyadEauDePerfume_1.jpg
+
+ ;301;;301_1.jpg;/300Wx300H/shades/AlMg_1.jpg;/96Wx96H/shades/AlMg_1.jpg
+ ;302;;302_1.jpg;/300Wx300H/shades/GradientBlue_1.jpg;/96Wx96H/shades/GradientBlue_1.jpg
+ ;303;;303_1.jpg,303_2.jpg,303_3.jpg;/300Wx300H/shades/FullWoodenBrown_1.jpg;/96Wx96H/shades/FullWoodenBrown_1.jpg
+ ;304;;304_1.jpg;/300Wx300H/shades/Photocromic_1.jpg;/96Wx96H/shades/Photocromic_1.jpg

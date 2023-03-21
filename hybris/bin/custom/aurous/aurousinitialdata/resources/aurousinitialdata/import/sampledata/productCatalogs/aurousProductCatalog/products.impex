@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Products
+
+# Macros / Replacement Parameter definitions
+$productCatalog=aurousProductCatalog
+ 
+ 
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+ 
+# Insert Products
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);myProduct;$catalogVersion;$approved;$taxGroup
+ ;101;Shoes;Aurous India;Aurous-Shoes-1;pieces;;ApparelSizeVariantProduct;JAY;
+ ;102;Shoes;Aurous India;Aurous-Shoes-2;pieces;;ApparelSizeVariantProduct;JAY;
+ ;103;Shoes;Aurous India;Aurous-Shoes-3;pieces;;ApparelSizeVariantProduct;JAY;
+ ;104;Shoes;Aurous India;Aurous-Shoes-4;pieces;;ApparelSizeVariantProduct;JAY;
+
+ ;201;Fragrances;Aurous India;Aurous-Perfume-1;pieces;;;JAY;
+ ;202;Fragrances;Aurous India;Aurous-Perfume-2;pieces;;;JAY;
+ ;203;Fragrances;Aurous India;Aurous-Perfume-3;pieces;;;JAY;
+ ;204;Fragrances;Aurous India;Aurous-Perfume-4;pieces;;;JAY;
+ 
+ ;301;Shades;Aurous India;Aurous-Sunglasses-1;pieces;;;JAY;
+ ;302;Shades;Aurous India;Aurous-Sunglasses-2;pieces;;;JAY;
+ ;303;Shades;Aurous India;Aurous-Sunglasses-3;pieces;;;JAY;
+ ;304;Shades;Aurous India;Aurous-Sunglasses-4;pieces;;;JAY;
+ 

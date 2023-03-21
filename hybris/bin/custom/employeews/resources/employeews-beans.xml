@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<enum class="my.employeews.populator.options.PaymentInfoOption">
+		<value>BASIC</value>
+		<value>BILLING_ADDRESS</value>
+	</enum>
+
+	<!--auth response  -->
+	<bean class="my.employeews.auth.data.LogoutResponse">
+		<property name="success" type="boolean"/>
+	</bean>
+
+	<!-- storesession data -->
+
+	<bean class="my.employeews.storesession.data.LanguageDataList">
+		<property name="languages"
+		          type="java.util.Collection&lt;de.hybris.platform.commercefacades.storesession.data.LanguageData>"/>
+	</bean>
+
+	<bean class="my.employeews.storesession.data.CurrencyDataList">
+		<property name="currencies"
+		          type="java.util.Collection&lt;de.hybris.platform.commercefacades.storesession.data.CurrencyData>"/>
+	</bean>
+
+	<!-- order data -->
+
+	<bean class="my.employeews.order.data.CartDataList">
+		<property name="carts"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.CartData>"/>
+	</bean>
+
+	<bean class="my.employeews.order.data.OrderEntryDataList">
+		<property name="orderEntries"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.OrderEntryData>"/>
+	</bean>
+
+	<bean class="my.employeews.order.data.CardTypeDataList">
+		<property name="cardTypes"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.CardTypeData>"/>
+	</bean>
+
+	<!-- product data -->
+
+	<bean class="my.employeews.product.data.ProductDataList">
+		<property name="products"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ProductData>"/>
+		<property name="catalog" type="String"/>
+		<property name="version" type="String"/>
+		<property name="totalProductCount" type="int"/>
+		<property name="totalPageCount" type="int"/>
+		<property name="currentPage" type="int"/>
+	</bean>
+
+	<bean class="my.employeews.product.data.PromotionDataList">
+		<property name="promotions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.PromotionData>"/>
+	</bean>
+
+	<bean class="my.employeews.product.data.PromotionResultDataList">
+		<property name="promotions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.PromotionResultData>"/>
+	</bean>
+
+	<bean class="my.employeews.product.data.ReviewDataList">
+		<property name="reviews" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ReviewData>"/>
+	</bean>
+
+	<bean class="my.employeews.product.data.SuggestionDataList">
+		<property name="suggestions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.SuggestionData>"/>
+	</bean>
+
+	<bean class="my.employeews.product.data.ProductFutureStocksData">
+		<property name="productCode" type="String"/>
+		<property name="futureStocks"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.FutureStockData>"/>
+	</bean>
+
+	<bean class="my.employeews.product.data.ProductFutureStocksDataList">
+		<property name="productFutureStocks"
+		          type="java.util.List&lt;my.employeews.product.data.ProductFutureStocksData>"/>
+	</bean>
+	
+	<!-- user data -->
+
+	<bean class="my.employeews.user.data.TitleDataList">
+		<property name="titles" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.TitleData>"/>
+	</bean>
+
+	<bean class="my.employeews.user.data.CountryDataList">
+		<property name="countries" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.CountryData>"/>
+	</bean>
+
+	<bean class="my.employeews.user.data.RegionDataList">
+		<property name="regions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.RegionData>"/>
+	</bean>
+
+	<bean class="my.employeews.user.data.AddressDataList">
+		<property name="addresses" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.AddressData>"/>
+	</bean>
+
+	<!-- voucher data -->
+	<bean class="my.employeews.voucher.data.VoucherDataList">
+		<property name="vouchers"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.voucher.data.VoucherData>"/>
+	</bean>
+
+	<!-- validation data -->
+	<bean class="my.employeews.validation.data.AddressValidationData">
+		<property name="errors" type="de.hybris.platform.webservicescommons.dto.error.ErrorListWsDTO"/>
+		<property name="decision" type="String"/>
+		<property name="suggestedAddressesList"
+		          type="my.employeews.user.data.AddressDataList"/>
+	</bean>
+
+	<bean class="my.employeews.validation.data.CartVoucherValidationData">
+		<property name="subject" type="String" />
+	</bean>
+
+	<bean class="my.employeews.validation.data.CartVoucherValidationDataList">
+		<property name="CartVoucherValidationDataList"
+				  type="java.util.List&lt;my.employeews.validation.data.CartVoucherValidationData>"/>
+	</bean>
+
+	<bean class="my.employeews.user.data.LoginChangeResponse">
+		<property name="success" type="boolean"/>
+	</bean>
+
+	<bean class="my.employeews.user.data.PasswordRestoreResponse">
+		<property name="success" type="boolean"/>
+	</bean>
+
+	<!-- update queues -->
+
+	<bean class="my.employeews.queues.data.ProductExpressUpdateElementData">
+		<property name="code" type="String"/>
+		<property name="catalogId" type="String"/>
+		<property name="catalogVersion" type="String"/>
+	</bean>
+
+	<bean class="my.employeews.queues.data.ProductExpressUpdateElementDataList">
+		<property name="productExpressUpdateElements"
+		          type="java.util.List&lt;my.employeews.queues.data.ProductExpressUpdateElementData>"/>
+	</bean>
+
+	<bean class="my.employeews.queues.data.OrderStatusUpdateElementData">
+		<property name="code" type="String"/>
+		<property name="status" type="String"/>
+		<property name="baseSiteId" type="String"/>
+	</bean>
+
+	<bean class="my.employeews.queues.data.OrderStatusUpdateElementDataList">
+		<property name="orderStatusUpdateElements"
+		          type="java.util.List&lt;my.employeews.queues.data.OrderStatusUpdateElementData>"/>
+	</bean>
+
+	<bean class="my.employeews.store.data.StoreCountListData">
+		<property name="countriesAndRegionsStoreCount"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.store.data.StoreCountData>"/>
+	</bean>
+
+	<!-- Consent management -->
+	<bean class="my.employeews.consent.data.ConsentTemplateDataList">
+		<property name="consentTemplates"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.consent.data.ConsentTemplateData>"/>
+	</bean>
+
+	<!-- Base Sites -->
+	<bean class="my.employeews.basesite.data.BaseSiteDataList">
+		<property name="baseSites"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.basesite.data.BaseSiteData>"/>
+	</bean>
+
+	<bean class="my.employeews.returns.data.ReturnRequestsData">
+		<property name="returnRequests"
+		          type="java.util.List&lt;de.hybris.platform.ordermanagementfacades.returns.data.ReturnRequestData>"/>
+		<property name="sorts" type="java.util.List&lt;de.hybris.platform.commerceservices.search.pagedata.SortData>"/>
+		<property name="pagination" type="de.hybris.platform.commerceservices.search.pagedata.PaginationData"/>
+	</bean>
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.employee.MyEmployeeDataWSDTO">
+		<property name="empId" type="java.lang.String"/>
+		<property name="empName" type="java.lang.String"/>
+		<property name="empSalary" type="java.lang.Double"/>
+		<property name="empWorkType" type="my.aurous.core.enums.WorkTypeEnumeration"/>
+		<property name="empAnnualPay" type="java.lang.Double"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.employee.MyEmployeeDataListWSDTO">
+		<property name="MyEmployee" type="java.util.List &lt;de.hybris.platform.commercewebservicescommons.dto.employee.MyEmployeeDataWSDTO>"/>
+	</bean>
+
+	<bean class="my.employeews.queues.data.MyEmployeeDataList">
+		<property name="MyEmployee" type="java.util.List &lt;my.aurous.facades.product.data.MyEmployeeData>"/>
+	</bean>
+
+</beans>

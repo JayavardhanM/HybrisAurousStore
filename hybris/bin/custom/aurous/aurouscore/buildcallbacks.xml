@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+--><!--
+ All hybris buildcallbacks.xml macrodefinitions:
+ 
+ Build/Documentation
+ 
+	 before/after ant macro "clean"
+		 <macrodef name="aurouscore_before_clean"/>
+		 <macrodef name="aurouscore_after_clean"/>
+
+	 before/after ant macro "build"
+		 <macrodef name="aurouscore_before_build"/>
+		 <macrodef name="aurouscore_after_build"/>
+
+	 before/after ant macro "compile_core" - the core module of the extension
+		 <macrodef name="aurouscore_before_compile_core">
+		 <macrodef name="aurouscore_after_compile_core">
+
+	 before/after ant macro "compile_web" - the web module of the extension
+		 <macrodef name="aurouscore_before_compile_web" />
+		 <macrodef name="aurouscore_after_compile_web" />
+ 
+ Preparing extension
+ 
+	 will be called in the beginning of the ant call and only once (also when using multiple 
+	 ant targets e.g. ant build yunittest)
+		 <macrodef name="aurouscore_only_once_prepare"/>
+ 
+ Creating ear module/production
+ 
+	 before/after ant macro "ear"
+		 <macrodef name="aurouscore_before_ear"/>
+		 <macrodef name="aurouscore_after_ear"/>
+
+	 before/after ant macro "production" - for hybris server only
+		 <macrodef name="aurouscore_before_production" />
+		 <macrodef name="aurouscore_after_production" />
+ 
+ JUnit Test
+ 
+	 before/after ant macro "yunitinit" 
+		 <macrodef name="aurouscore_before_yunitinit" />
+		 <macrodef name="aurouscore_after_yunitinit" />
+
+	 before/after ant macro "yunit"
+		 <macrodef name="aurouscore_before_yunit" />
+		 <macrodef name="aurouscore_after_yunit" /> 
+
+ Distribution package
+ 
+	 before/after ant macro "dist" - internal target; only for use when platform is available in source code
+		 <macrodef name="aurouscore_after_dist"/>
+		 <macrodef name="aurouscore_before_dist"/>
+
+	 before/after ant macro "dist_copy" - internal target; only for use when platform is available in source code
+		 <macrodef name="aurouscore_before_dist_copy"/>
+		 <macrodef name="aurouscore_after_dist_copy"/>
+
+--><project name="aurouscore_buildcallbacks">
+    	
+    <macrodef name="aurouscore_after_build">
+        		
+        <sequential>
+            			
+            <impexGenerate extname="aurouscore"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+    <macrodef name="aurouscore_clean_classpath_file">
+        		
+        <sequential>
+            			
+            <copy failonerror="true" file="${ext.aurouscore.path}/.classpath" overwrite="true" tofile="${ext.aurouscore.path}/.classpath.edit">
+                				
+                <filterchain>
+                    					
+                    <linecontainsregexp negate="true">
+                        						
+                        <regexp pattern="^(\t\t\t\t|)$"/>
+                          
+                        <!-- added by script -->
+                        					
+                    </linecontainsregexp>
+                    				
+                </filterchain>
+                			
+            </copy>
+            			
+            <move failonerror="true" file="${ext.aurouscore.path}/.classpath.edit" overwrite="true" tofile="${ext.aurouscore.path}/.classpath"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+    <macrodef name="aurouscore_after_clean">
+        		
+        <sequential>
+            			
+            <echo level="info" message="Generating .classpath file for aurouscore"/>
+            			
+            <create_extension_classpath_file extname="aurouscore"/>
+            			
+            <aurouscore_clean_classpath_file/>
+            			
+            <delete failonerror="false" file="${ext.aurouscore.path}/resources-lang/touch_impexgen"/>
+            		
+        </sequential>
+        	
+    </macrodef>
+    	
+	
+    <!-- exclude impex files from localization -->
+     
+	
+    <patternset id="aurouscore.localization.pattern">
+        		
+        <patternset refid="localization.defaultpattern"/>
+        		
+        <exclude name="**/*.impex"/>
+        	
+    </patternset>
+    	
+
+
+</project>

@@ -1,0 +1,48 @@
+$productCatalog=aurousProductCatalog
+   
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+   
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+  
+UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;
+ ;101;5,00 GBP, 5,50 EUR, 10 USD, 765,33 JPY
+ ;101_6;5,00 GBP, 5,50 EUR, 10 USD, 765,33 JPY
+ ;101_7;5,00 GBP, 5,50 EUR, 10 USD, 765,33 JPY
+ ;101_8;5,00 GBP, 5,50 EUR, 10 USD, 765,33 JPY
+ ;101_9;5,00 GBP, 5,50 EUR, 10 USD, 765,33 JPY
+ ;101_10;5,00 GBP, 5,50 EUR, 10 USD, 765,33 JPY
+
+ ;102;2,50 GBP, 2,75 EUR, 20 USD, 382,66 JPY
+ ;102_6;2,50 GBP, 2,75 EUR, 20 USD, 382,66 JPY
+ ;102_7;2,50 GBP, 2,75 EUR, 20 USD, 382,66 JPY
+ ;102_8;2,50 GBP, 2,75 EUR, 20 USD, 382,66 JPY
+ ;102_9;2,50 GBP, 2,75 EUR, 20 USD, 382,66 JPY
+ ;102_10;2,50 GBP, 2,75 EUR, 20 USD, 382,66 JPY
+
+ ;103;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;103_6;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;103_7;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;103_8;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;103_9;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;103_10;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+
+ ;104;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;104_6;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;104_7;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;104_8;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;104_9;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+ ;104_10;5,00 GBP, 5,50 EUR, 30 USD, 765,33 JPY
+
+
+ ;201;20,00 GBP, 22,00 EUR, 22 USD, 3061,30 JPY
+ ;202;20,00 GBP, 22,00 EUR, 20 USD, 3061,30 JPY
+ ;203;20,00 GBP, 22,00 EUR, 23 USD, 3061,30 JPY
+ ;204;20,00 GBP, 22,00 EUR, 23 USD, 3061,30 JPY
+
+
+ ;301;30,00 GBP, 33,00 EUR, 38 USD, 4591,95 JPY
+ ;302;30,00 GBP, 33,00 EUR, 38 USD, 4591,95 JPY
+ ;303;30,00 GBP, 33,00 EUR, 30 USD, 4591,95 JPY
+ ;304;30,00 GBP, 33,00 EUR, 30 USD, 4591,95 JPY

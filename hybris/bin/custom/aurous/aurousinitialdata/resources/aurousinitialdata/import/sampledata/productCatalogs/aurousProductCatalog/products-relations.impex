@@ -1,0 +1,23 @@
+$productCatalog=aurousProductCatalog
+ 
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+ 
+# Insert Product References
+INSERT_UPDATE ProductReference;source(code,$catalogVersion)[unique=true];target(code,$catalogVersion)[unique=true];referenceType(code);active[default=true];preselected[default=false]
+;101;102;SIMILAR;true;false
+;101;103;SIMILAR;true;false
+;101;104;SIMILAR;true;false
+;101;201;OTHERS;true;false
+;101;301;OTHERS;true;false
+
+;201;202;SIMILAR;true;false
+;201;203;SIMILAR;true;false
+;201;204;SIMILAR;true;false
+;201;101;OTHERS;true;false
+;201;301;OTHERS;true;false
+
+;301;302;SIMILAR;true;false
+;301;303;SIMILAR;true;false
+;301;304;SIMILAR;true;false
+;301;101;OTHERS;true;false
+;301;201;OTHERS;true;false

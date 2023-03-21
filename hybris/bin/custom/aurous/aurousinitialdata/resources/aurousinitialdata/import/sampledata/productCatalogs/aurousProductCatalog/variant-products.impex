@@ -1,0 +1,43 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Variant Products
+
+# CHANGE THIS TO WORK WITH YOUR OWN VARIANT STRUCTURE
+# ApparelProducts use Variants with a structure:
+# ApparelProduct > ApparelStyleVariantProduct > ApparelSizeVariantProduct
+# ApparelProducts may have no variations, only style variations or both style and size variations.
+
+# Macros / Replacement Parameter definitions
+$productCatalog=aurousProductCatalog
+$supercategories=supercategories(code, $catalogVersion)
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$prices=europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Staged']))
+$approved=approvalstatus(code)[default='check']
+
+# Create Variants
+INSERT_UPDATE ApparelSizeVariantProduct;code[unique=true];$baseProduct;ean;unit(code);swatchColors;supercategories(code,$catalogVersion);approvalstatus(code)[default='approved'];$catalogVersion
+;101_6 ;101;;pieces;;;
+;101_7 ;101;;pieces;;;
+;101_8 ;101;;pieces;;;
+;101_9 ;101;;pieces;;;
+;101_10;101;;pieces;;;
+
+;102_6 ;102;;pieces;;;
+;102_7 ;102;;pieces;;;
+;102_8 ;102;;pieces;;;
+;102_9 ;102;;pieces;;;
+;102_10;102;;pieces;;;
+
+;103_6 ;103;;pieces;;;
+;103_7 ;103;;pieces;;;
+;103_8 ;103;;pieces;;;
+;103_9 ;103;;pieces;;;
+;103_10;103;;pieces;;;
+
+;104_6 ;104;;pieces;;;
+;104_7 ;104;;pieces;;;
+;104_8 ;104;;pieces;;;
+;104_9 ;104;;pieces;;;
+;104_10;104;;pieces;;;
